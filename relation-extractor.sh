@@ -28,7 +28,7 @@ export LANG=en_US.UTF-8
 # VM_OPTS="-Xdebug -Xnoagent -Djava.compiler=none -Xrunjdwp:transport=dt_socket,server=y,suspend=y -Xmx1024m -Djava.library.path=/usr/lib:/usr/local/lib"
 
 VM_OPTS="-Xmx1024m \
-	-Djava.library.path=/usr/lib:/usr/lib/jni:/usr/local/lib:/usr/local/lib/jni"
+	-Djava.library.path=$OPENCOG/builds/current/lib:/usr/lib:/usr/lib/jni:/usr/local/lib:/usr/local/lib/jni"
 
 # By default, these resources are read from the relex jar file.
 # Alternately, they are taken from the default paths, which are the
@@ -42,11 +42,11 @@ CLASSPATH='-classpath ./target/classes:./target/lib/*'
 
 # Read a sentence from stdin:
 #echo "Alice wrote a book about dinosaurs for the University of California in Berkeley." | \
-#	java $VM_OPTS $RELEX_OPTS $CLASSPATH relex.RelationExtractor -n 4 -l	-t -r-a
-#/usr/lib/jvm/java-6-sun/bin/java $VM_OPTS $RELEX_OPTS $CLASSPATH relex.RelationExtractor -n 4 -l -t -r -a -s "Alice ate the mushroom."
+	java $VM_OPTS $RELEX_OPTS $CLASSPATH relex.RelationExtractor -n 4 -l	-t -r-a
+/usr/lib/jvm/java-6-sun/bin/java $VM_OPTS $RELEX_OPTS $CLASSPATH relex.RelationExtractor -n 4 -l -t -r -a
 
 # java $VM_OPTS $RELEX_OPTS $CLASSPATH relex.RelationExtractor -n 4 -l -t -r -a -s "Alice ate the mushroom."
-java $VM_OPTS $RELEX_OPTS $CLASSPATH relex.RelationExtractor -n 4 -l -t -a --stanford --penn -s "Alice ate the mushroom."
+#java $VM_OPTS $RELEX_OPTS $CLASSPATH relex.RelationExtractor -n 4 -l -t -a --stanford --penn -s "Is the bed white?"
 
 # Generate a graph of the links produced by link-grammar
 # Requires graphviz (http://www.graphviz.org/)

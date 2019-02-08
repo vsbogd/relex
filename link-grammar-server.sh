@@ -32,7 +32,7 @@
 
 export LANG=en_US.UTF-8
 
-VM_OPTS="-Xmx1024m -Djava.library.path=/usr/lib:/usr/lib/jni:/usr/local/lib:/usr/local/lib/jni"
-CLASSPATH='-classpath ./target/lib/*'
+VM_OPTS="-Xmx1024m -Djava.library.path=$OPENCOG/builds/current/lib:/usr/lib:/usr/lib/jni:/usr/local/lib:/usr/local/lib/jni"
+CLASSPATH='-classpath ./target/classes:./target/lib/*'
 
 java $VM_OPTS $CLASSPATH org.linkgrammar.LGService 9000
